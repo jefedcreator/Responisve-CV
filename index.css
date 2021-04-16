@@ -1,0 +1,131 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+section{
+    display: grid;
+    grid-template-areas: 'div1 div1 div2'
+                        'div3 div3 div4'
+                        'div5 div5 div6'
+                        'div7 div7 div6'
+                        'div7 div7 div8' ;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1,h4{
+    color: lightskyblue;
+}
+
+h4{
+    text-decoration: underline;
+}
+
+.Name{
+    grid-area: div1;
+}
+ 
+h1{
+    text-transform: uppercase;
+}
+
+.details{
+    grid-area: div2;
+}
+
+.exp{
+    grid-area: div3;
+}
+
+.skill{
+    grid-area: div4;
+}
+
+.edu{
+    grid-area: div5;
+}
+
+.cert{
+    grid-area: div6;
+}
+
+.project{
+    grid-area: div7;
+}
+
+.lang{
+    grid-area: div8;
+}
+
+@media screen and (max-width: 500px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-size: 0.85rem;
+    }
+    
+    section{
+        display: grid;
+        grid-template-areas: 'div1'
+                            'div2'
+                            'div3' 
+                            'div4'
+                            'div5'
+                            'div6'
+                            'div7'
+                            'div8' ;
+        gap: 10px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .Name{
+        padding: 5px;
+        grid-area: div1;
+        text-align: center;
+    }
+     
+    h1{
+        font-size: 1rem;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .details{
+        grid-area: div2;
+    }
+    
+    .exp{
+        width: 100%;
+        grid-area: div3;
+    }
+    
+    .skill{
+        width: 100%;
+        grid-area: div4;
+    }
+    
+    .edu{
+        width: 100%;
+        grid-area: div5;
+    }
+    
+    .cert{
+        width: 100%;
+        grid-area: div6;
+    }
+    
+    .project{
+        width: 100%;
+        grid-area: div7;
+    }
+    
+    .lang{
+        width: 100%;
+        grid-area: div8;
+    }
+}
