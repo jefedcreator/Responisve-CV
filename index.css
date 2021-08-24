@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     height: 100vh;
     background-color: #333;
@@ -13,18 +17,18 @@ body{
 
 section{
     display: grid;
-    grid-template-areas: 'div1 div1 div2'
-                        'div3 div3 div4'
-                        'div5 div5 div6'
-                        'div7 div7 div6'
-                        'div7 div7 div8' ;
-    gap: 10px;
-    width: 90%;
-    margin: 0 auto;
-    height: 100%;
+    grid-template-areas: 'div1'
+                            'div2'
+                            'div3'
+                            'div4'
+                            'div5'
+                            'div6'
+                            'div7'
+                            'div8';
+    grid-gap: 10px;
 }
 
-h1,h4{
+h1,h4,h3{
     color: lightskyblue;
     font-family: Ubuntu;
 }
@@ -34,9 +38,6 @@ strong{
     font-weight: bold;
 }
 
-h4{
-    text-decoration: underline;
-}
 
 p{
     color: #d6d6d6;
@@ -48,20 +49,76 @@ a{
     text-decoration: none;
 }
 
-.Name{
+
+header{
     grid-area: div1;
     display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: 3% auto;
+}
+
+header nav{
+    width: 70%;
+}
+
+header > nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
-    /* justify-content: space-between; */
 }
 
-.Name > div:nth-child(1){
-    width: 60%;
+#hamburger{
+    display: none;
 }
 
-.Name > div:nth-child(2){
-    width: 30%;
+nav li{
+    list-style-type: none;
+}
+
+li a{
+    color: lightskyblue;
+    font-family: Rubik
+}
+
+#Name{
+    grid-area: div2;
+    height: 80vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#Name h1{
+    font-size:3em;
+}
+
+.text{
+    color: #d6d6d6;
+    font-family: Rubik;
+    font-size: 2rem;
+}
+
+#Name :nth-child(1){
+    width: 50%;
+}
+
+#Name :nth-child(2){
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+#Name :nth-child(2) > img{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
 }
 
 .ingressive img{
@@ -70,60 +127,265 @@ a{
  
 h1{
     text-transform: uppercase;
+    font-size: 2rem;
 }
 
-.details{
+/* .details{
     grid-area: div2;
     text-align: right;
-}
+} */
 
-.exp{
+#aboutme{
     grid-area: div3;
-    height: 100%;
-    
+    height: 50vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
 }
 
-.exp div{
+#exp{
+    grid-area: div4;
+    width: 90%;
+    margin: 0 auto;
+    height: 160vh;
+}
+
+#exp > div{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    height: 100%;
-}
-
-.skill{
-    grid-area: div4;
-    padding: 5% 0%;
-}
-
-.edu{
-    grid-area: div5;
-    padding: 5% 0%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-}
-
-.cert{
-    grid-area: div6;
-}
-
-.project{
-    grid-area: div7;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-}
-
-.lang{
-    grid-area: div8;
-}
-
-.lang span{
-    display: flex;
+    height: 80%;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #f5f5f5;
     align-items: center;
+}
+
+#exp > div > div{
+    width: 80%;
+    padding: 2% 5%;
+    border-bottom: 1px solid black;
+}
+
+#exp h3{
+    color: #4c7faf;
+}
+
+#exp p{
+    color: black;
+}
+
+#edu{
+    grid-area: div5;
+    /* padding: 5% 0%; */
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    width: 90%;
+    margin: 0 auto;
+}
+
+#whatido{
+    grid-area: div6;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around;
+}
+
+#whatido > div{
+    display: grid;
+    grid-template-areas: 'div1 div2'
+                            'div3 div2';
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    width: 100%;
+    height: 80%;
+    justify-content: space-between;
+}
+
+#whatido > div > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+    width: 30%;
+    background-color: #f5f5f5;
+    padding: 5%;
+    border-radius: 3%;
+    position: relative;
+}
+
+#whatido > div > div:nth-child(1){
+    grid-area: div1;
+    width: 100%;
+    height: 100%;
+    background-image: url(./visuals/uiux.jpg);
+    transform: translateY(-800px);
+}
+
+#whatido > div > div > div{
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    opacity: 60%;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#whatido > div > div:nth-child(2){
+    grid-area: div2;
+    width: 100%;
+    height: 100%;
+    /* display: flex;
+    align-items: center; */
+    background-image: url(./visuals/webdev.jpg);
+    transform: translateY(500px);
+}
+#whatido > div > div:nth-child(3){
+    grid-area: div3;
+    width: 100%;
+    height: 100%;
+    background-image: url(./visuals/itsupport.jpg);
+    transform: translateY(-800px);
+}
+
+
+#project{
+    grid-area: div7;
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-around;
+}
+
+#project a{
+    color: #4c7faf;
+    font-family: Rubik;
+}
+
+#project > div{
+    display: grid;
+    grid-template-areas: 'div1 div2'
+                            'div1 div3' ;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+    width: 100%;
+    height: 80%;
+    justify-content: space-between;
+}
+
+#project > div > div{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px; 
+    width: 100%;
+    background-color: #f5f5f5;
+    padding: 2%;
+    border-radius: 3%;
+}
+
+#project > div > div > div{
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    opacity: 70%;
+    border-radius: 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 10% 5%;
+}
+
+#project > div > div:nth-child(1){
+    grid-area: div1;
+    width: 100%;
+    height: 100%;
+    background-image: url(./visuals/ayalo.png);
+    /* opacity: 20%; */
+    transform: translateY(-800px);
+}
+#project > div > div:nth-child(2){
+    grid-area: div2;
+    width: 100%;
+    height: 100%;
+    /* display: flex;
+    align-items: center; */
+    background-image: url(./visuals/restaurant.png);
+    transform: translateX(800px);
+}
+#project > div > div:nth-child(3){
+    grid-area: div3;
+    width: 100%;
+    height: 100%;
+    background-image: url(./visuals/loopstudios.png);
+    transform: translateX(-1200px);
+}
+
+#skills{
+    grid-area: div8;
+    height: 50vh;
+    width: 90%;
+    margin: 0 auto;
+}
+#skills div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 90%;
+}
+
+footer{
+    display: flex;
+    height: 20vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#contact{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+#contact h4{
+    border: 1px solid white;
+    padding: 1%;
+}
+
+#contact :nth-child(2){
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#contact img{
+    cursor: pointer;
 }
 
 @media screen and (max-width: 500px) {
@@ -134,86 +396,180 @@ h1{
         font-size: 0.85rem;
     }
     
-    section{
-        display: grid;
-        grid-template-areas: 'div1'
-                            'div2'
-                            'div3' 
-                            'div4'
-                            'div5'
-                            'div6'
-                            'div7'
-                            'div8' ;
-        gap: 10px;
+    html{
+        overflow-x: none;
+    }
+
+    header{
+        grid-area: div1;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        margin: 3% auto;
+    }
+
+    header nav{
+        width: 10%;
+    }
+
+    #Name{
+        grid-area: div2;
+        height: 50vh;
         width: 90%;
         margin: 0 auto;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
     }
-
-    .Name{
-        padding: 5px;
-        grid-area: div1;
-        text-align: center;
+    
+    #Name h1{
+        font-size:1em;
     }
-
-    .Name{
-        grid-area: div1;
+    
+    .text{
+        color: #d6d6d6;
+        font-family: Rubik;
+        font-size: 1rem;
+    }
+    
+    #Name :nth-child(1){
+        width: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
-        /* justify-content: space-between; */
+        justify-content: center;
     }
     
-    .Name > div:nth-child(1){
+    #Name :nth-child(2){
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
     }
     
-    .Name > div:nth-child(2){
-        width: 100%;
+    #Name :nth-child(2) > img{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+    
+    #whatido{
+        grid-area: div6;
+        height: 50vh;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: space-around;
+    }
+    
+    #project{
+        grid-area: div7;
+        height: 50vh;
+        width: 90%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        /* align-items: center; */
+        justify-content: space-around;
     }
 
-    .ingressive img{
-        width: 50%;
-        height: 50%;
+    #project > div > div:nth-child(1){
+        grid-area: div1;
+        width: 100%;
+        height: 100%;
+        background-image: url(./visuals/ayalo.png);
+        /* opacity: 20%; */
+        transform: unset;
     }
-     
-    h1{
-        font-size: 1rem;
-        text-align: center;
-        text-transform: uppercase;
-    }
-    
-    .details{
+    #project > div > div:nth-child(2){
         grid-area: div2;
-    }
-    
-    .exp{
         width: 100%;
+        height: 100%;
+        /* display: flex;
+        align-items: center; */
+        background-image: url(./visuals/restaurant.png);
+        transform: unset;
+    }
+    #project > div > div:nth-child(3){
         grid-area: div3;
-    }
-    
-    .skill{
         width: 100%;
-        grid-area: div4;
+        height: 100%;
+        background-image: url(./visuals/loopstudios.png);
+        transform: unset;
     }
-    
-    .edu{
+
+    #project > div > div > div{
+        position: absolute;
+        background-color: black;
+        height: 100%;
         width: 100%;
-        grid-area: div5;
+        opacity: 70%;
+        border-radius: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 10% 15%;
     }
-    
-    .cert{
-        width: 100%;
-        grid-area: div6;
-    }
-    
-    .project{
-        width: 100%;
-        grid-area: div7;
-    }
-    
-    .lang{
-        width: 100%;
+    #skills{
         grid-area: div8;
+        height: 30vh;
+        width: 90%;
+        margin: 0 auto;
+    }
+    #skills div{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        height: 90%;
+    }
+    #nav-ul{
+        transform: translateY(-800px);
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(130, 130, 130, 0.8);
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        z-index: 1;
+        align-items: center;
+    }
+
+    #nav-ul.show{
+        transform: translateY(0);
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(130, 130, 130, 0.8);
+        justify-content: space-evenly;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        align-items: center;
+        transition-property: transform;
+        transition-timing-function: ease-in-out;
+        -webkit-transition-duration: 1s;
+        -o-transition-duration: 1s;
+        -moz-transition-duration: 1s;
+        transition-duration: 1s;
+        -webkit-transition-delay: 0.5s;
+        -o-transition-delay: 0.5s;
+        -moz-transition-delay: 0.5s;
+        transition-delay: 0.5s;
+    }
+
+    #hamburger{
+        display: flex;
+        height: 50%;
     }
 }
