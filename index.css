@@ -393,7 +393,7 @@ footer{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        font-size: 0.85rem;
+        font-size: 1rem;
     }
     
     html{
@@ -456,6 +456,14 @@ footer{
         border-radius: 50%;
     }
     
+    #exp{
+        grid-area: div4;
+        width: 90%;
+        margin: 0 auto;
+        height: 200vh;
+        font-size: 0.85rem;
+    }
+
     #whatido{
         grid-area: div6;
         height: 50vh;
@@ -466,7 +474,46 @@ footer{
         /* align-items: center; */
         justify-content: space-around;
     }
+
+    #whatido > div > div:nth-child(1){
+        grid-area: div1;
+        width: 100%;
+        height: 100%;
+        background-image: url(./visuals/uiux.jpg);
+        transform: translateY(-80px);
+    }
+
+    #whatido > div > div:nth-child(2){
+        grid-area: div2;
+        width: 100%;
+        height: 100%;
+        /* display: flex;
+        align-items: center; */
+        background-image: url(./visuals/webdev.jpg);
+        transform: translateY(50px);
+    }
+    #whatido > div > div:nth-child(3){
+        grid-area: div3;
+        width: 100%;
+        height: 100%;
+        background-image: url(./visuals/itsupport.jpg);
+        transform: translateY(-80px);
+    }
     
+    #whatido > div > div > div{
+        position: absolute;
+        background-color: black;
+        height: 100%;
+        width: 100%;
+        opacity: 60%;
+        border-radius: 3%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 10px;
+    }
+
     #project{
         grid-area: div7;
         height: 50vh;
@@ -530,7 +577,7 @@ footer{
         height: 90%;
     }
     #nav-ul{
-        transform: translateY(-800px);
+        display: none;
         flex-direction: column;
         width: 100%;
         height: 100vh;
@@ -548,7 +595,7 @@ footer{
         display: flex;
         flex-direction: column;
         width: 100%;
-        height: 100vh;
+        height: 30vh;
         background-color: rgb(130, 130, 130, 0.8);
         justify-content: space-evenly;
         position: absolute;
